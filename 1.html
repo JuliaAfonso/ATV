@@ -1,0 +1,140 @@
+Ir para o conteúdo
+Pesquise ou pule para ...
+
+Solicitação de pull s
+Problemas
+Mercado
+Explorar
+ 
+@JuliaAfonso 
+Aprenda Git e GitHub sem nenhum código!
+Usando o guia Hello World, você iniciará um branch, escreverá comentários e abrirá uma solicitação pull.
+
+
+1bertomelo
+/
+uniaraxa_alg_avancado_2021
+1
+01
+Código
+Problemas
+Solicitações de pull
+Ações
+Projetos
+Wiki
+Segurança
+Intuições
+uniaraxa_alg_avancado_2021/revisao_prova/ exercicio1.html
+@ 1bertomelo
+1bertomelo revisao prova
+Último commit 7c36a4a há 8 horas
+ História
+ 1 contribuidor
+105 linhas (91 sloc)  3,19 KB
+  
+<! DOCTYPE html >
+< html  lang = " en " >
+
+< cabeça >
+    < meta  charset = " UTF-8 " >
+    < meta  http-equiv = " X-UA-Compatible " content = " IE = edge " >
+    < meta  name = " viewport " content = " width = device-width, initial-scale = 1.0 " >
+    < título > Documento </ título >
+</ head >
+< estilo >
+    . verde {
+        cor : verde;
+        tamanho da fonte :  18 px ;
+    }
+
+    . vermelho {
+        tamanho da fonte :  18 px ;
+        cor : vermelho;
+    }
+</ estilo >
+
+< corpo >
+    < div >
+        < h1 > Jogo da Sorte </ h1 >
+        < h3 > Digite 5 números entre 1 e 20! </ h3 >
+        < input  id = " num1 " type = " número " />
+        < input  id = " num2 " type = " número " />
+        < input  id = " num3 " type = " número " />
+        < input  id = " num4 " type = " número " />
+        < input  id = " num5 " type = " número " />
+        < button  onclick = " iniciarJogo () " > Sortear </ button >
+    </ div >
+    < div >
+        < h1  id = " textoSorteados " > </ h1 >
+        < h3  class = " vermelho " id = " sorteado_1 " > </ h3 >
+        < h3  class = " vermelho " id = " sorteado_2 " > </ h3 >
+        < h3  class = " vermelho " id = " sorteado_3 " > </ h3 >
+        < h3  class = " vermelho " id = " sorteado_4 " > </ h3 >
+        < h3  class = " vermelho " id = " sorteado_5 " > </ h3 >
+    </ div >
+
+
+    < script >
+
+        function  iniciarJogo ( )  {
+            deixe  valor1  =  documento . querySelector ( '# num1' ) . valor ;
+            deixe  valor2  =  documento . querySelector ( '# num2' ) . valor ;
+            deixe  valor3  =  documento . querySelector ( '# num3' ) . valor ;
+            deixe  valor4  =  documento . querySelector ( '# num4' ) . valor ;
+            deixe  valor5  =  documento . querySelector ( '# num5' ) . valor ;
+
+
+            let  valoresDigitados  =  [ ] ;
+            deixe  qtdAcerto  =  0 ;
+            valoresDigitados . push ( valor1 ) ;
+            valoresDigitados . push ( valor2 ) ;
+            valoresDigitados . push ( valor3 ) ;
+            valoresDigitados . push ( valor4 ) ;
+            valoresDigitados . push ( valor5 ) ;
+            deixe  numerosSorteados  =  sortear ( 5 ,  20 ) ;
+            console . log ( valoresDigitados ) ;
+            console . log ( numerosSorteados ) ;
+            para  ( seja  i  =  0 ;  i  <  valoresDigitados . comprimento ;  i ++ )  {
+                para  ( deixe  j  =  0 ;  j  <  numerosSorteados . comprimento ;  j ++ )  {
+                    documento . querySelector ( `#sorteado_ $ { j  +  1 } ` ) . innerHTML  =  numerosSorteados [ j ] ;
+                    if  ( valoresDigitados [ i ]  ==  numerosSorteados [ j ] )  {
+                        documento . querySelector ( `#sorteado_ $ { j  +  1 } ` ) . className  =  'verde' ;
+                        qtdAcerto ++ ;
+                    }
+                }
+            }
+            if  ( qtdAcerto  ===  0 )  {
+                alert ( 'Que pena você errou tudo !!' ) ;
+            }
+            else  {
+                if  ( qtdAcerto  ===  5 )  {
+                    alerta ( `Hoje é seu dia de sorte, acertou tudo !!` ) ;
+
+                }  else  {
+                    alerta ( `Acertos $ { qtdAcerto } ` ) ;
+                }
+            }
+            documento . querySelector ( `# textoSorteados` ) . innerHTML  =  'Números sorteados' ;
+        }
+
+        function  sortear ( qtde ,  maximo )  {
+            deixe  i  =  0 ;
+            let  sorteados  =  [ ] ;
+            deixe  valorSorteado  =  0 ;
+            enquanto  ( i  <  qtde )  {
+                valorSorteado  =  1  +  Matemática . chão ( Math . random ( )  *  maximo ) ;
+                if  ( sorteados . indexOf ( valorSorteado )  ==  - 1 )  {
+                    sorteados . push ( valorSorteado ) ;
+                    i ++ ;
+                }
+            }
+            return  sorteados ;
+        }
+
+    </ script >
+
+
+</ body >
+
+</ html >
+

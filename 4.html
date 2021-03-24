@@ -1,0 +1,106 @@
+<! DOCTYPE html >
+< html  lang = " en " >
+
+< cabeça >
+    < meta  charset = " UTF-8 " >
+    < meta  http-equiv = " X-UA-Compatible " content = " IE = edge " >
+    < meta  name = " viewport " content = " width = device-width, initial-scale = 1.0 " >
+    < título > Documento </ título >
+</ head >
+
+< corpo >
+    < div >
+        < input  id = " cel_0_0 " type = " número " />
+        < input  id = " cel_0_1 " type = " número " />
+        < input  id = " cel_0_2 " type = " number " />
+        < input  id = " cel_0_3 " type = " número " />
+        < input  id = " cel_0_4 " type = " número " />
+    </ div >
+    < div >
+        < input  id = " cel_1_0 " type = " número " />
+        < input  id = " cel_1_1 " type = " number " />
+        < input  id = " cel_1_2 " type = " number " />
+        < input  id = " cel_1_3 " type = " número " />
+        < input  id = " cel_1_4 " type = " número " />
+    </ div >
+    < div >
+        < input  id = " cel_2_0 " type = " número " />
+        < input  id = " cel_2_1 " type = " number " />
+        < input  id = " cel_2_2 " type = " number " />
+        < input  id = " cel_2_3 " type = " número " />
+        < input  id = " cel_2_4 " type = " número " />
+    </ div >
+    < div >
+        < input  id = " cel_3_0 " type = " número " />
+        < input  id = " cel_3_1 " type = " número " />
+        < input  id = " cel_3_2 " type = " número " />
+        < input  id = " cel_3_3 " type = " número " />
+        < input  id = " cel_3_4 " type = " número " />
+    </ div >
+    < div >
+        < input  id = " cel_4_0 " type = " número " />
+        < input  id = " cel_4_1 " type = " número " />
+        < input  id = " cel_4_2 " type = " número " />
+        < input  id = " cel_4_3 " type = " número " />
+        < input  id = " cel_4_4 " type = " número " />
+    </ Div >  < br >
+    < button  onclick = " calcular () " > Cálculos </ button >
+    < script >
+        var  matriz5x5  =  [
+            [ 1 ,  1 ,  1 ,  1 ,  1 ] ,
+            [ 2 ,  2 ,  2 ,  2 ,  2 ] ,
+            [ 3 ,  3 ,  3 ,  3 ,  3 ] ,
+            [ 4 ,  4 ,  4 ,  4 ,  4 ] ,
+            [ 5 ,  5 ,  5 ,  5 ,  5 ] ,
+        ] ;
+
+        function  somarLinha3 ( )  {
+            retornar  matriz5x5 [ 3 ] [ 0 ]  +  matriz5x5 [ 3 ] [ 1 ]  +  matriz5x5 [ 3 ] [ 2 ]  +  matriz5x5 [ 3 ] [ 3 ]  +  matriz5x5 [ 3 ] [ 4 ] ;
+            / * deixe somaLinha3 = 0;
+                      para (seja i = 0; i <matriz5x5 [3] .comprimento; i ++) {
+                          somaLinha3 + = matriz5x5 [3] [i];
+                      }
+                      return matriz5x5; * /
+        }
+
+        function  somarColuna2 ( )  {
+            retornar  matriz5x5 [ 0 ] [ 2 ]  +  matriz5x5 [ 1 ] [ 2 ]  +  matriz5x5 [ 2 ] [ 2 ]  +  matriz5x5 [ 3 ] [ 2 ]  +  matriz5x5 [ 4 ] [ 2 ] ;
+        }
+
+        function  somarDiagonalPrincipal ( )  {
+            retornar  matriz5x5 [ 0 ] [ 0 ]  +  matriz5x5 [ 1 ] [ 1 ]  +  matriz5x5 [ 2 ] [ 2 ]  +  matriz5x5 [ 3 ] [ 3 ]  +  matriz5x5 [ 4 ] [ 4 ] ;
+        }
+
+        function  somarDiagonalSecundaria ( )  {
+            retornar  matriz5x5 [ 0 ] [ 4 ]  +  matriz5x5 [ 1 ] [ 3 ]  +  matriz5x5 [ 2 ] [ 2 ]  +  matriz5x5 [ 3 ] [ 1 ]  +  matriz5x5 [ 4 ] [ 0 ] ;
+        }
+
+        function  somarTotal ( )  {
+            deixe  somaTotal  =  0 ;
+            para  ( deixe  linha  =  0 ;  linha  <  matriz5x5 . comprimento ;  linha ++ )  {
+                for  ( deixe  coluna  =  0 ;  coluna  <  matriz5x5 . comprimento ;  coluna ++ )  {
+                    somaTotal  =  somaTotal  +  matriz5x5 [ linha ] [ coluna ] ;
+                    // somaTotal + = matriz5x5 [linha] [coluna];
+                }
+            }
+            return  somaTotal ;
+        }
+
+        function  calcular ( )  {
+            deixe  somaLinha3  =  somarLinha3 ( ) ;
+            deixe  somaColuna2  =  somarColuna2 ( ) ;
+            deixe  somaDiagonal1  =  somarDiagonalPrincipal ( ) ;
+            deixe  somaDiagonal2  =  somarDiagonalSecundaria ( ) ;
+            deixe  somaTudo  =  somarTotal ( ) ;
+            console . log ( somaLinha3 ) ;
+            console . log ( somaColuna2 ) ;
+            console . log ( somaDiagonal1 ) ;
+            console . log ( somaDiagonal2 ) ;
+            console . log ( somaTudo ) ;
+        }
+
+    </ script >
+
+</ body >
+
+</ html >
